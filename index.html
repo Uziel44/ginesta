@@ -887,6 +887,7 @@
           <div class="campo"><label>Nombre completo</label><input name="nombre" value="${u.nombre}" required></div>
           <div class="campo"><label>Email</label><input name="email" type="email" value="${u.email}" required></div>
           <div class="campo"><label>Teléfono</label><input name="telefono" value="${u.telefono}"></div>
+          <div class="campo"><label>Dirección</label><input name="direccion" value="${u.direccion||""}"></div>
           <div class="campo"><label>Nueva contraseña (opcional)</label><input name="clave" type="password" placeholder="Dejar en blanco para no cambiarla"></div>
           <div><button type="submit" class="btn-primario">Guardar cambios</button></div>
         </form>
@@ -901,6 +902,7 @@
       u.nombre = f.get("nombre").trim();
       u.email = f.get("email").trim();
       u.telefono = f.get("telefono").trim();
+      u.direccion = f.get("direccion").trim();
       const nuevaClave = f.get("clave");
       if(nuevaClave) u.clave = nuevaClave;
       guardarDB(db);
